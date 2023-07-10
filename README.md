@@ -19,7 +19,7 @@ The code follows the official document of [FastAPI OAuth2 JWT](https://fastapi.t
 5. Visit http://localhost:8000/docs
 
 6. If running the app for the first time, the *users* table in the database is empty. To be able to login and use the API, you can send a **POST** request to endpoint:
- http://localhost:8000/users/init with an empty body. This will create the default superuser defined in *./configurations.py*.
+ http://localhost:8000/users/init with an empty body. This will create the default superuser defined in *./config.py*.
 
    
 ## Test
