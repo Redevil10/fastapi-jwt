@@ -1,7 +1,5 @@
 # FastAPI-JWT
-[![unit-test](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml) [![lint](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml)
-
-
+[![lint](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml) [![unit-test](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml)
 ## Introduction
 FastAPI + JWT + SQLAlchemy + SQLite(or Postgres) demo.
 The code follows the official document of [FastAPI OAuth2 JWT](https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/).
