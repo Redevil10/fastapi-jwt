@@ -1,4 +1,4 @@
-name: run-unit-tests-and-lint
+name: unit-test
 
 on:
   pull_request:
@@ -27,21 +27,3 @@ jobs:
       - name: run unit tests
         run:
           pytest
-
-  lint:
-    name: Lint Code Base
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v5
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: ${{ github.base_ref }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISABLE_ERRORS: true
-          VALIDATE_PYTHON_MYPY: false
-          BASH_SEVERITY: error

@@ -1,4 +1,5 @@
 # FastAPI-JWT
+[![unit-test](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml) [![lint](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml)
 
 
 ## Introduction
