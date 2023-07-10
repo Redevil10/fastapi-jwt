@@ -1,0 +1,47 @@
+name: run-unit-tests-and-lint
+
+on:
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  unittest:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: set python version to 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: run unit tests
+        run:
+          pytest
+
+  lint:
+    name: Lint Code Base
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Lint Code Base
+        uses: super-linter/super-linter/slim@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: ${{ github.base_ref }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISABLE_ERRORS: true
+          VALIDATE_PYTHON_MYPY: false
+          BASH_SEVERITY: error
