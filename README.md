@@ -1,5 +1,8 @@
-# FastAPI-JWT
-[![lint](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml) [![unit-test](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/unit-test.yaml) [![coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Redevil10/426778eefb0a2907ee258ec5ff7c5960/raw/f55877451816ffb6ef8d02dd1152f7f790c6b3be/covbadge.json)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/coverage.yaml)
+# FastAPI JWT Demo
+
+[![lint](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml) [![test](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml) [![coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Redevil10/426778eefb0a2907ee258ec5ff7c5960/raw/f55877451816ffb6ef8d02dd1152f7f790c6b3be/covbadge.json)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml) [![python](https://img.shields.io/badge/python-3.10%20%7C%20_3.11-blue)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml)
+
+
 ## Introduction
 FastAPI + JWT + SQLAlchemy + SQLite(or Postgres) demo.
 The code follows the official document of [FastAPI OAuth2 JWT](https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/).

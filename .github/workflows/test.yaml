@@ -1,4 +1,4 @@
-name: "coverage"
+name: "test"
 
 on:
   push:
@@ -85,7 +85,7 @@ jobs:
           auth: ${{ secrets.GIST_TOKEN }}
           gistID: 426778eefb0a2907ee258ec5ff7c5960   # replace with your real Gist id.
           filename: covbadge.json
-          label: Coverage
+          label: coverage
           message: ${{ env.total }}%
           minColorRange: 50
           maxColorRange: 90
