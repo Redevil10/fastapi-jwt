@@ -2,11 +2,22 @@ from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
 
 from routers import users
-from utils.database import Base, engine
+from utils.database import metadata, engine, database
 
-Base.metadata.create_all(bind=engine)
+metadata.create_all(engine)
 
 app = FastAPI(debug=True)
+
+
+@app.on_event("startup")
+async def startup():
+    await database.connect()
+
+
+@app.on_event("shutdown")
+async def shutdown():
+    await database.disconnect()
+
 
 app.include_router(users.router, prefix="/users", tags=["users"])
 

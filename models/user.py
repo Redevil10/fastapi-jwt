@@ -1,15 +1,15 @@
-from sqlalchemy import Boolean, Column, Integer, String
+from sqlalchemy import Boolean, Column, Integer, String, Table
 
-from utils.database import Base
+from utils.database import metadata
 
-
-class UserTable(Base):
-    __tablename__ = "users"
-
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    username = Column(String(50), unique=True, index=True)
-    email = Column(String(50), unique=True, index=True)
-    full_name = Column(String(50))
-    hashed_password = Column(String)
-    is_active = Column(Boolean, default=True)
-    is_superuser = Column(Boolean, default=False)
+UserTable = Table(
+    "users",
+    metadata,
+    Column("id", Integer, primary_key=True, index=True, autoincrement=True),
+    Column("username", String(length=50), unique=True, index=True),
+    Column("email", String(length=50), unique=True, index=True),
+    Column("full_name", String(length=50)),
+    Column("hashed_password", String),
+    Column("is_active", Boolean, default=True),
+    Column("is_superuser", Boolean, default=False),
+)
