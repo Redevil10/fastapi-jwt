@@ -1,8 +1,9 @@
 name: "test"
 
 on:
-  push:
   pull_request:
+  push:
+  workflow_dispatch:
 
 defaults:
   run:
