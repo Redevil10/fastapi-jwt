@@ -1,5 +1,4 @@
 from sqlalchemy import Boolean, Column, Integer, String, Table
-
 from utils.database import metadata
 
 UserTable = Table(

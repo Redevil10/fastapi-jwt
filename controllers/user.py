@@ -8,8 +8,12 @@ from jose import JWTError, jwt
 from pydantic import EmailStr
 
 from config import settings
-from controllers.token import (create_access_token, get_password_hash,
-                               oauth2_scheme, verify_password)
+from controllers.token import (
+    create_access_token,
+    get_password_hash,
+    oauth2_scheme,
+    verify_password,
+)
 from models.user import UserTable
 from schemas.token import Token, TokenData
 from schemas.user import User, UserCreate, UserDelete, UserInDB, UserUpdate

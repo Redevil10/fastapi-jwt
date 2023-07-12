@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
-
 from routers import users
 from utils.database import database, engine, metadata
 
