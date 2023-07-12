@@ -1,14 +1,13 @@
 from typing import List
 
+from controllers import user as user_ctrl
 from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import EmailStr
+from schemas.token import Token
+from schemas.user import User, UserCreate, UserDelete, UserUpdate
 from sqlalchemy.orm import Session
 from utils.database import get_db
-from controllers import user as user_ctrl
-from schemas.user import User, UserCreate, UserDelete, UserUpdate
-from schemas.token import Token
-
 
 router = APIRouter()
 

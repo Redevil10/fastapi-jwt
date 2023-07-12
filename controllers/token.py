@@ -4,12 +4,10 @@
 from datetime import datetime, timedelta
 from typing import Optional
 
+from config import settings
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt
 from passlib.context import CryptContext
-
-from config import settings
-
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

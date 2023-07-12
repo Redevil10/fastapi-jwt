@@ -1,22 +1,21 @@
 from datetime import timedelta
 from typing import List, Optional
 
-from fastapi import HTTPException, Depends, status
-from fastapi.security import OAuth2PasswordRequestForm
-from jose import jwt, JWTError
-from pydantic import EmailStr
-from sqlalchemy.orm import Session
-
-from controllers.token import (
-    get_password_hash,
-    verify_password,
-    oauth2_scheme,
-    create_access_token,
-)
-from schemas.token import TokenData, Token
-from schemas.user import User, UserCreate, UserUpdate, UserInDB, UserDelete
-from models.user import UserTable
 from config import settings
+from controllers.token import (
+    create_access_token,
+    get_password_hash,
+    oauth2_scheme,
+    verify_password,
+)
+from fastapi import Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordRequestForm
+from jose import JWTError, jwt
+from models.user import UserTable
+from pydantic import EmailStr
+from schemas.token import Token, TokenData
+from schemas.user import User, UserCreate, UserDelete, UserInDB, UserUpdate
+from sqlalchemy.orm import Session
 from utils.database import get_db
 
 
@@ -126,15 +125,6 @@ def update_user(db: Session, user_id: int, user: UserUpdate) -> User:
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
 
-    # if allow to update email
-    if user.email is not None and user.email != db_user.email:
-        conflict_user = get_db_user_by_email(db, user.email)
-        if conflict_user is not None:
-            raise HTTPException(
-                status_code=404, detail="User with same email already exists"
-            )
-        db_user.email = user.email
-
     # if allow to update username
     if user.username is not None and user.username != db_user.username:
         conflict_user = get_db_user_by_username(db, user.username)
@@ -144,13 +134,22 @@ def update_user(db: Session, user_id: int, user: UserUpdate) -> User:
             )
         db_user.username = user.username
 
-    if user.full_name is not None:
+    # if allow to update email
+    if user.email is not None and user.email != db_user.email:
+        conflict_user = get_db_user_by_email(db, user.email)
+        if conflict_user is not None:
+            raise HTTPException(
+                status_code=404, detail="User with same email already exists"
+            )
+        db_user.email = user.email
+
+    if user.full_name is not None and user.full_name != db_user.full_name:
         db_user.full_name = user.full_name
     if user.password is not None:
         db_user.hashed_password = get_password_hash(user.password)
-    if user.is_active is not None:
+    if user.is_active is not None and user.is_active != db_user.is_active:
         db_user.is_active = user.is_active
-    if user.is_superuser is not None:
+    if user.is_superuser is not None and user.is_superuser != db_user.is_superuser:
         db_user.is_superuser = user.is_superuser
     db.commit()
     db.refresh(db_user)

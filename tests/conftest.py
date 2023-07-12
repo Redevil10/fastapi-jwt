@@ -1,13 +1,11 @@
 import os
 
 import pytest
-
-# import requests
 from fastapi.testclient import TestClient
 
 # set ENV before create the app, to make sure we are creating a test db
 os.environ["ENV"] = "TEST"
-from main import app
+from main import app  # noqa: E402
 
 
 @pytest.fixture(scope="session")

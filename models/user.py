@@ -1,5 +1,4 @@
 from sqlalchemy import Boolean, Column, Integer, String
-
 from utils.database import Base
 
 
