@@ -1,6 +1,5 @@
 from config import settings
 
-
 DEFAULT_SUPER_USER = {
     "id": 1,
     "username": settings.DEFAULT_SUPERUSER_USERNAME,

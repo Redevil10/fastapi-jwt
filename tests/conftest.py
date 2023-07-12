@@ -1,8 +1,6 @@
 import os
 
 import pytest
-
-# import requests
 from fastapi.testclient import TestClient
 
 # set ENV before create the app, to make sure we are creating a test db

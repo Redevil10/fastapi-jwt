@@ -4,11 +4,11 @@ from databases import Database
 from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import EmailStr
-from utils.database import get_db
-from controllers import user as user_ctrl
-from schemas.user import User, UserCreate, UserDelete, UserUpdate
-from schemas.token import Token
 
+from controllers import user as user_ctrl
+from schemas.token import Token
+from schemas.user import User, UserCreate, UserDelete, UserUpdate
+from utils.database import get_db
 
 router = APIRouter()
 

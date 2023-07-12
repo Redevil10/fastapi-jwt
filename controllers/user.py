@@ -2,21 +2,17 @@ from datetime import timedelta
 from typing import List, Optional
 
 from databases import Database
-from fastapi import HTTPException, Depends, status
+from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
-from jose import jwt, JWTError
+from jose import JWTError, jwt
 from pydantic import EmailStr
 
-from controllers.token import (
-    get_password_hash,
-    verify_password,
-    oauth2_scheme,
-    create_access_token,
-)
-from schemas.token import TokenData, Token
-from schemas.user import User, UserCreate, UserUpdate, UserInDB, UserDelete
-from models.user import UserTable
 from config import settings
+from controllers.token import (create_access_token, get_password_hash,
+                               oauth2_scheme, verify_password)
+from models.user import UserTable
+from schemas.token import Token, TokenData
+from schemas.user import User, UserCreate, UserDelete, UserInDB, UserUpdate
 from utils.database import get_db
 
 

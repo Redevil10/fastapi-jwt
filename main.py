@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
 
 from routers import users
-from utils.database import metadata, engine, database
+from utils.database import database, engine, metadata
 
 metadata.create_all(engine)
 

@@ -1,6 +1,6 @@
 # https://fastapi.tiangolo.com/advanced/settings/
-import secrets
 import os
+import secrets
 
 from pydantic import EmailStr
 from pydantic_settings import BaseSettings
