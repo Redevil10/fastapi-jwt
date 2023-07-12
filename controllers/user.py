@@ -1,12 +1,6 @@
 from datetime import timedelta
 from typing import List, Optional
 
-from databases import Database
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordRequestForm
-from jose import JWTError, jwt
-from pydantic import EmailStr
-
 from config import settings
 from controllers.token import (
     create_access_token,
@@ -14,7 +8,12 @@ from controllers.token import (
     oauth2_scheme,
     verify_password,
 )
+from databases import Database
+from fastapi import Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordRequestForm
+from jose import JWTError, jwt
 from models.user import UserTable
+from pydantic import EmailStr
 from schemas.token import Token, TokenData
 from schemas.user import User, UserCreate, UserDelete, UserInDB, UserUpdate
 from utils.database import get_db
