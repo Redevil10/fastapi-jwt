@@ -1,6 +1,5 @@
 from config import settings
 
-
 DEFAULT_SUPER_USER = {
     "id": 1,
     "username": settings.DEFAULT_SUPERUSER_USERNAME,
@@ -221,9 +220,9 @@ def test_update_user_normal_user(test_app):
     ]
     test_data = {
         "email": "test.user1@example.com",
-        "full_name": "TEST USER1",
-        "is_active": False,
-        "is_superuser": True,
+        "full_name": "TEST USER1 NEW",
+        "is_active": True,
+        "is_superuser": False,
     }
     new_data = TEST_USER_1.copy()
     new_data.update(test_data)
