@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
-
 from routers import users
 from utils.database import Base, engine
 
@@ -8,7 +7,7 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(debug=True)
 
-app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(users.router)
 
 
 def custom_openapi():

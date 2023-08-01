@@ -9,7 +9,7 @@ from schemas.user import User, UserCreate, UserDelete, UserUpdate
 from sqlalchemy.orm import Session
 from utils.database import get_db
 
-router = APIRouter()
+router = APIRouter(prefix="/users", tags=["users"])
 
 
 @router.post("/init", response_model=User)

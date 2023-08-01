@@ -12,9 +12,17 @@ The code follows the official document of [FastAPI OAuth2 JWT](https://fastapi.t
 1. Clone the repo
 
 2. Create virtual env and activate
-
-3. Install python packages in `requirements.txt`
-
+   ```bash
+   $ pyenv shell 3.11
+   $ python -m venv venv
+   $ source venv/bin/activate
+   (venv) $ pip install -U pip
+   ```
+3. Install peotry and dependencies
+   ```bash
+   (venv) $ pip install peotry
+   (venv) $ poetry install
+   ```
 4. Start FastAPI app locally
     ```bash
     (venv) $ uvicorn main:app --reload
