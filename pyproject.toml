@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "fastapi-jwt"
+version = "0.1.0"
+description = "FastAPI with JWT Authentication Demo"
+authors = ["Qing Wan <juveseason@gmail.com>"]
+readme = "README.md"
+#packages = [{include = "fastapi_jwt"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.1"
+uvicorn = "^0.23.2"
+pytest = "^7.4.0"
+black = "^23.7.0"
+flake8 = "^6.1.0"
+isort = "^5.12.0"
+httpx = "^0.24.1"
+pydantic-settings = "^2.0.2"
+pydantic = {extras = ["email"], version = "^2.1.1"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+sqlalchemy = "^2.0.19"
+python-multipart = "^0.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
