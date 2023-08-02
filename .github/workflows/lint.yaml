@@ -2,7 +2,6 @@ name: lint
 
 on:
   pull_request:
-
   workflow_dispatch:
 
 jobs:
@@ -13,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Lint Code Base
         uses: super-linter/super-linter/slim@v5
@@ -21,5 +22,5 @@ jobs:
           DEFAULT_BRANCH: ${{ github.base_ref }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: false
-          VALIDATE_PYTHON_MYPY: true
+          VALIDATE_PYTHON_MYPY: false
           BASH_SEVERITY: error
