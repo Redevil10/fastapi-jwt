@@ -23,5 +23,5 @@ jobs:
           DEFAULT_BRANCH: ${{ github.base_ref }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: false
-          VALIDATE_PYTHON_MYPY: false
+          VALIDATE_PYTHON_MYPY: true
           BASH_SEVERITY: error
