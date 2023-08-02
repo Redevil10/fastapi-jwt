@@ -1,10 +1,11 @@
 # FastAPI JWT Demo
 
+<!-- markdownlint-disable -->
 [![lint](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/lint.yaml)
 [![test](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml/badge.svg)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml)
 [![coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Redevil10/426778eefb0a2907ee258ec5ff7c5960/raw/covbadge.json)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml)
 [![python](https://img.shields.io/badge/python-3.10%20%7C%20_3.11-blue)](https://github.com/Redevil10/fastapi-jwt/actions/workflows/test.yaml)
-
+<!-- markdownlint-restore -->
 
 ## Introduction
 FastAPI + JWT + SQLAlchemy + SQLite(or Postgres) demo.
