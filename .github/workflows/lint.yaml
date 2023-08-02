@@ -1,13 +1,9 @@
 name: lint
 
 on:
-  push:
-    branches-ignore:
-      - main
-  # Remove the line above to run when pushing to main
   pull_request:
-    branches:
-      - main
+
+  workflow_dispatch:
 
 jobs:
   lint:
@@ -22,7 +18,7 @@ jobs:
         uses: super-linter/super-linter/slim@v5
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: ${{ github.base_ref }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: false
           VALIDATE_PYTHON_MYPY: true
