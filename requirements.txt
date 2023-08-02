@@ -10,6 +10,7 @@ cffi==1.15.1
 charset-normalizer==3.2.0
 cleo==2.0.1
 click==8.1.6
+coverage==7.2.7
 crashtest==0.4.1
 cryptography==41.0.3
 distlib==0.3.7

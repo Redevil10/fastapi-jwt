@@ -21,10 +21,8 @@ python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 sqlalchemy = "^2.0.19"
 python-multipart = "^0.0.6"
+coverage = "^7.2.7"
 
-
-[tool.poetry.group.dev.dependencies]
-tox-poetry-installer = {extras = ["poetry"], version = "^0.10.3"}
 
 [build-system]
 requires = ["poetry-core"]
