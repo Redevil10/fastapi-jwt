@@ -22,9 +22,9 @@ The code follows the official document of [FastAPI OAuth2 JWT](https://fastapi.t
    $ source venv/bin/activate
    (venv) $ pip install -U pip
    ```
-3. Install peotry and dependencies
+3. Install poetry and dependencies
    ```bash
-   (venv) $ pip install peotry
+   (venv) $ pip install poetry
    (venv) $ poetry install
    ```
 4. Start FastAPI app locally
